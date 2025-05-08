@@ -6,11 +6,11 @@ void drawMaket()
 {
     txSetColor (TX_WHITE);
     txSetFillColor (TX_TRANSPARENT);
-    txRectangle (380, 20, 910, 60);
-    txRectangle (50, 75, 1220, 125);
-    txRectangle (70, 155, 410, 675);
-    txRectangle (470, 155, 820, 675);
-    txRectangle (910, 155, 1220, 675);
+    txRectangle (380, 20, 990, 60);
+    txRectangle (50, 75, 1320, 125);
+    txRectangle (50, 155, 440, 675);
+    txRectangle (490, 155, 880, 675);
+    txRectangle (930, 155, 1320, 675);
 }
 int main()
     {
@@ -23,8 +23,8 @@ int main()
 
     txSetColor (TX_LIGHTGREEN);
     txSelectFont ("Times", 45);
-    txDrawText (380, 20, 910, 60, "Номер вопроса:1");
-    txDrawText (50, 75, 1220, 125, "Какой из ниже представленных телефонов является смартфоном");
+    txDrawText (380, 20, 990, 60, "Номер вопроса:1");
+    txDrawText (50, 75, 1320, 125, "Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2");
 
 
 

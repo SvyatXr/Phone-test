@@ -2,6 +2,26 @@
 
 #include "TXLib.h"
 
+struct Forma
+{
+ string text_question;
+ HDC picture_answer1;
+ HDC picture_answer2;
+ HDC picture_answer3;
+
+ void draw()
+ {
+        txDrawText (50, 75, 1320, 125, text_question.c_str());
+        txBitBlt (txDC(),  50, 155, 390, 505, picture_answer1);
+        txBitBlt (txDC(), 490, 155, 390, 505, picture_answer2);
+        txBitBlt (txDC(), 930, 155, 390, 505, picture_answer3);
+ }
+};
+
+
+
+
+
 void drawMaket()
 {
     txSetColor (TX_WHITE);
@@ -22,15 +42,17 @@ int main()
     {
     txCreateWindow (1370, 702);
     txTextCursor(false);
+    Forma form1 = {"Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp")};
+    Forma form2 = {"Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp")};
+    Forma form3 = {"Какой из ниже представленных телефонов является смартфоном кампании страны USA?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp")};
 
-    HDC Huawei_Mate_Xs_2 = txLoadImage ("image/Mate Xs 2.bmp");
-    HDC Xiaomi_15_ultra = txLoadImage ("image/15 ultra.bmp");
-    HDC Samsung_Galaxy_Z_fold_6 = txLoadImage ("image/Z fold 6.bmp");
     int n_question = 1;
-    int count_question = 1;
+    int count_question = 3;
 
     while(n_question <= count_question)
     {
+        txSetFillColour(TX_BLACK);
+        txClear();
         txBegin();
         drawMaket();
 
@@ -38,25 +60,40 @@ int main()
 
 
         txSetColor (TX_LIGHTGREEN);
-        txSelectFont ("Times", 45);
-        txDrawText (380, 20, 990, 60, "Номер вопроса:1");
-        txDrawText (50, 75, 1320, 125, "Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2");
-        txBitBlt (txDC(),  50, 155, 390, 505, Huawei_Mate_Xs_2);
-        txBitBlt (txDC(), 490, 155, 390, 505, Xiaomi_15_ultra);
-        txBitBlt (txDC(), 930, 155, 390, 505, Samsung_Galaxy_Z_fold_6);
+        txSelectFont ("Times", 40);
+
+        if(n_question == 1)
+        {
+         form1.draw();
+        }
+
+        else if(n_question == 2)
+        {
+         form2.draw();
+        }
+        else if(n_question == 3)
+        {
+         form3.draw();
+        }
 
         if(click(50))
         {
+         while(txMouseButtons() == 1)
+         txSleep(100);
          n_question ++;
         }
 
         if(click(490))
         {
+         while(txMouseButtons() == 1)
+         txSleep(100);
          n_question ++;
         }
 
         if(click(930))
         {
+         while(txMouseButtons() == 1)
+         txSleep(100);
          n_question ++;
         }
 

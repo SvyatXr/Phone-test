@@ -1,5 +1,3 @@
-
-
 #include "TXLib.h"
 
 struct Forma
@@ -8,6 +6,7 @@ struct Forma
  HDC picture_answer1;
  HDC picture_answer2;
  HDC picture_answer3;
+ int n_right_answer;
 
  void draw()
  {
@@ -17,11 +16,6 @@ struct Forma
         txBitBlt (txDC(), 930, 155, 390, 505, picture_answer3);
  }
 };
-
-
-
-
-
 void drawMaket()
 {
     txSetColor (TX_WHITE);
@@ -36,18 +30,20 @@ void drawMaket()
 bool click(int x)
 {
     return(txMouseButtons()==1 && txMouseX()>x && txMouseX()<x+390 && txMouseY()>155 && txMouseY()<505);
-
 }
 int main()
     {
     txCreateWindow (1370, 702);
     txTextCursor(false);
-    Forma form1 = {"Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp")};
-    Forma form2 = {"Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp")};
-    Forma form3 = {"Какой из ниже представленных телефонов является смартфоном кампании страны USA?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp")};
-    
+    Forma form[3];
+     form[0] = {"Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 1};
+     form[1] = {"Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 3};
+     form[2] = {"Какой из ниже представленных телефонов является смартфоном кампании страны USA?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 2};
+
+    char stroka[25];
     int n_question = 1;
     int count_question = 3;
+    int score = 0;
 
     while(n_question <= count_question)
     {
@@ -56,28 +52,19 @@ int main()
         txBegin();
         drawMaket();
 
-
-
-
         txSetColor (TX_LIGHTGREEN);
         txSelectFont ("Times", 40);
 
-        if(n_question == 1)
-        {
-         form1.draw();
-        }
+        sprintf(stroka,"Вопрос №%d из %d", n_question, count_question);
+        txDrawText (380, 20, 990, 60, stroka);
 
-        else if(n_question == 2)
-        {
-         form2.draw();
-        }
-        else if(n_question == 3)
-        {
-         form3.draw();
-        }
+        form[n_question-1].draw();
+
+        for(int i=0; i<count_question; i++)
 
         if(click(50))
         {
+         if(form[i].n_right_answer == 3) score++;
          while(txMouseButtons() == 1)
          txSleep(100);
          n_question ++;
@@ -85,6 +72,7 @@ int main()
 
         if(click(490))
         {
+         //if(form[i].n_right_answer == 2) score++;
          while(txMouseButtons() == 1)
          txSleep(100);
          n_question ++;
@@ -92,6 +80,7 @@ int main()
 
         if(click(930))
         {
+        if(form[i].n_right_answer == 1) score++;
          while(txMouseButtons() == 1)
          txSleep(100);
          n_question ++;
@@ -100,8 +89,12 @@ int main()
        txEnd();
        txSleep(20);
     }
+    txSetFillColour(TX_BLACK);
+    txClear();
 
-    txTextCursor (false);
+    sprintf(stroka,"Ваш результат %d из 3", n_question);
+    txDrawText (0, 0, 1370, 702, stroka);
+
     return 0;
     }
 

@@ -48,3 +48,95 @@ Run file:	C:\Users\2023\Downloads\Phone-test-main\Phone-test-main\bin\Debug\Тест
 Directory:	C:\Users\2023\Downloads\Phone-test-main\Phone-test-main
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\bin\Debug\Тест по телефонам.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433. Попытка записать данные по адресу 0x36393635 в модуле C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\bin\Debug\Тест по телефонам.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0x1E2C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\main.cpp:108:
+
+    106: 
+    107:     sprintf(stroka,"Ваш результат %d из %d", n_question);
+=>  108:     txDrawText (380, 20, 990, 60, stroka);
+    109: 
+    110: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	May 20 2025 09:16:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 20 2025 09:17:02
+
+Run file:	C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\bin\Debug\Тест по телефонам.exe
+Directory:	C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\bin\Debug\Тест по телефонам.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433. Попытка записать данные по адресу 0x36393635 в модуле C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\bin\Debug\Тест по телефонам.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0x1E2C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\main.cpp:108:
+
+    106: 
+    107:     sprintf(stroka,"Ваш результат %d из %d", n_question);
+=>  108:     txDrawText (380, 20, 990, 60, stroka);
+    109: 
+    110: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	May 20 2025 09:16:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 20 2025 09:17:02
+
+Run file:	C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main\bin\Debug\Тест по телефонам.exe
+Directory:	C:\Users\2023\Downloads\Phone-test-main (2)\Phone-test-main
+
+--------------------------------------------------

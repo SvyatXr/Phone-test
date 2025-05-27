@@ -1,4 +1,6 @@
 #include "TXLib.h"
+#include <fstream>
+using namespace std;
 
 struct Forma
 {
@@ -26,23 +28,43 @@ void drawMaket()
     txRectangle (490, 155, 880, 660);
     txRectangle (930, 155, 1320, 660);
 }
-
 bool click(int x)
 {
     return(txMouseButtons()==1 && txMouseX()>x && txMouseX()<x+390 && txMouseY()>155 && txMouseY()<505);
 }
+string getPart(string str, int *pos2)
+{
+ int pos1 = *pos2 + 1;
+ *pos2 = str.find(",", pos1);
+ string part = str.substr(pos1, *pos2-pos1);
+ return part;
+ }
 int main()
-    {
+{
+setlocale(LC_ALL, "Russian");
     txCreateWindow (1370, 702);
     txTextCursor(false);
-    Forma form_list[3];
-     form_list[0] = {"Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 1};
-     form_list[1] = {"Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 3};
-     form_list[2] = {"Какой из ниже представленных телефонов является смартфоном кампании страны USA?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 2};
+    Forma form_list[20];
+   int i = 0;
+   string str;
+   ifstream file ("1.txt");
+   while(file.good())
+   {
+    getline(file, str);
+    int pos2 = -1;
+    form_list[i].text_question = getPart(str, &pos2);
+    form_list[i].picture_answer1 = txLoadImage (getPart(str, &pos2).c_str());
+    form_list[i].picture_answer2 = txLoadImage (getPart(str, &pos2).c_str());
+    form_list[i].picture_answer3 = txLoadImage (getPart(str, &pos2).c_str());
+    form_list[i].n_right_answer = atoi(getPart(str, &pos2).c_str());
+    i++;
+   }
+   file.close();
+
     Forma form;
     char stroka[25];
     int n_question = 1;
-    int count_question = 3;
+    int count_question = i;
     int score = 0;
 
     while(n_question <= count_question)

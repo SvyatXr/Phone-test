@@ -31,15 +31,52 @@ bool click(int x)
 {
     return(txMouseButtons()==1 && txMouseX()>x && txMouseX()<x+390 && txMouseY()>155 && txMouseY()<505);
 }
+string getPart(string str, int *pos2)
+{
+ int pos1 = *pos2 + 1;
+ *pos2 = str.find(",", pos1;
+ string part = str.substr(pos1, *pos2-pos1);
+ return part;
+ }
+
+
+
 int main()
-    {
+{
+setlocale(LC_ALL, "Russian");
     txCreateWindow (1370, 702);
     txTextCursor(false);
-    Forma form[3];
-     form[0] = {"Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 1};
-     form[1] = {"Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 3};
-     form[2] = {"Какой из ниже представленных телефонов является смартфоном кампании страны USA?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 2};
-
+    Forma form_list[3];
+    
+   string str;
+   ifstream file ("..txt");
+   while(file.good())
+   {
+    getline(file, str);
+    int pos2 = -1;
+    form_list[i] = text_question = getPart(str, &pos2);
+    form_list[i] = picture_answer1 = txLoadImage (getPart(str, &pos2).c_s);
+    form_list[i] = picture_answer2 = txLoadImage (getPart(str, &pos2));
+    form_list[i] = picture_answer3 = txLoadImage (getPart(str, &pos2));
+    form_list[i] = n_right_answer = getPart(str, &pos2);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     form_list[0] = {"Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 1};
+     form_list[1] = {"Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 3};
+     form_list[2] = {"Какой из ниже представленных телефонов является смартфоном кампании страны USA?", txLoadImage ("image/Mate Xs 2.bmp"), txLoadImage ("image/15 ultra.bmp"), txLoadImage ("image/Z fold 6.bmp"), 2};
+    Forma form;
     char stroka[25];
     int n_question = 1;
     int count_question = 3;
@@ -47,6 +84,15 @@ int main()
 
     while(n_question <= count_question)
     {
+      text_question = getPart(str, &pos2);
+      picture_answer1 = getPart(str, &pos2);
+      picture_answer2 = getPart(str, &pos2);
+     picture_answer3 = getPart(str, &pos2);
+      n_right_answer = getPart(str, &pos2);
+
+
+
+
         txSetFillColour(TX_BLACK);
         txClear();
         txBegin();
@@ -58,13 +104,14 @@ int main()
         sprintf(stroka,"Вопрос №%d из %d", n_question, count_question);
         txDrawText (380, 20, 990, 60, stroka);
 
-        form[n_question-1].draw();
+        form = form_list[n_question-1];
+        form.draw();
 
         for(int i=0; i<count_question; i++)
 
         if(click(50))
         {
-         if(form[i].n_right_answer == 3) score++;
+         if(form.n_right_answer == 1) score++;
          while(txMouseButtons() == 1)
          txSleep(100);
          n_question ++;
@@ -72,7 +119,7 @@ int main()
 
         if(click(490))
         {
-         //if(form[i].n_right_answer == 2) score++;
+         if(form.n_right_answer == 2) score++;
          while(txMouseButtons() == 1)
          txSleep(100);
          n_question ++;
@@ -80,7 +127,7 @@ int main()
 
         if(click(930))
         {
-        if(form[i].n_right_answer == 1) score++;
+        if(form.n_right_answer == 3) score++;
          while(txMouseButtons() == 1)
          txSleep(100);
          n_question ++;
@@ -92,7 +139,7 @@ int main()
     txSetFillColour(TX_BLACK);
     txClear();
 
-    sprintf(stroka,"Ваш результат %d из 3", n_question);
+    sprintf(stroka,"Ваш результат %d из %d", score, count_question);
     txDrawText (0, 0, 1370, 702, stroka);
 
     return 0;

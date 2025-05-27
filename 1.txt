@@ -1,0 +1,10 @@
+Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
+Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?,image/snapdragon_8_elite.bmp,image/Dimensity_1200.bmp,image/snapdragon_860.bmp,3
+Какой из ниже представленных телефонов является смартфоном компании страны USA?,image/Mate Xs 2.bmp,image/9 pro fold.bmp,image/Z fold 6.bmp,2
+Какой телефон не производится компанией Samsung?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3
+Какой из ниже представленных телефонов является смартфоном Samsung Galaxy s24 ultra?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
+Какой процессор стоит в смартфоне Realme neo 7?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3
+Какой из ниже представленных телефонов является смартфоном LG Wing?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
+Кто основал компанию Nothing?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3
+Какой из ниже представленных телефонов является смартфоном Motorola Edge 50 ultra?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
+На каком смартфоне есть зарядка 320 ватт?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3

@@ -1,10 +1,10 @@
 Какой из ниже представленных телефонов является смартфоном Huawei Mate XS2?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
 Какой процессор стоит в смартфоне Xiaomi Poco x3 pro?,image/snapdragon_8_elite.bmp,image/Dimensity_1200.bmp,image/snapdragon_860.bmp,3
-Какой из ниже представленных телефонов является смартфоном компании страны USA?,image/Mate Xs 2.bmp,image/9 pro fold.bmp,image/Z fold 6.bmp,2
-Какой телефон не производится компанией Samsung?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3
-Какой из ниже представленных телефонов является смартфоном Samsung Galaxy s24 ultra?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
-Какой процессор стоит в смартфоне Realme neo 7?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3
-Какой из ниже представленных телефонов является смартфоном LG Wing?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
-Кто основал компанию Nothing?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3
-Какой из ниже представленных телефонов является смартфоном Motorola Edge 50 ultra?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
-На каком смартфоне есть зарядка 320 ватт?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,3
+Какой из ниже представленных телефонов является смартфоном компании страны USA?,image/Mate 70 RS Ultimate Design.bmp,image/9 pro fold.bmp,image/S25 ultra.bmp,2
+Какой телефон не производится компанией Samsung?,image/S25 edge.bmp,image/S21 ultra.bmp,image/Mix Fold 3.bmp,3
+Какой из ниже представленных телефонов является смартфоном Samsung Galaxy S24 ultra?,image/S24 ultra.bmp,image/S25 ultra.bmp,image/S20 ultra.bmp,1
+Какой процессор стоит в смартфоне Realme neo 7?,image/snapdragon_8_gen_2.bmp,image/snapdragon_888+_5G.bmp,image/Dimensity_9300+.bmp,3
+Какой из ниже представленных телефонов является смартфоном LG Wing?,image/14 5G.bmp,image/Wing.bmp,image/Mix Alpha.bmp,2
+Кто основал компанию Nothing?,image/Лэй Цзюнь.bmp,image/Karl Pay.bmp,image/Ли Бён Чхоль.bmp,2
+Какой из ниже представленных телефонов является смартфоном Motorola Edge 50 ultra?,image/Edge 50 ultra.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,1
+На каком смартфоне есть зарядка 320 ватт?,image/Mate Xs 2.bmp,image/15 ultra.bmp,image/Z fold 6.bmp,2
